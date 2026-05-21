@@ -3,42 +3,69 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Golden Echoes blog archive.">
-    <title>Golden Echoes</title>
+    <meta name="description" content="Golden Echoes: Life in the age of Applied Intelligence. Essays at the intersection of faith, technology, history, and culture.">
+    <meta property="og:title" content="Golden Echoes">
+    <meta property="og:description" content="Life in the age of Applied Intelligence.">
+    <meta property="og:url" content="https://fretnoyz.github.io/goldenechoes.com/">
+    <title>Golden Echoes | Life in the age of Applied Intelligence</title>
     <link rel="stylesheet" href="assets/styles.css">
   </head>
-  <body data-blog-base="./">
+  <body data-page="home">
     <header class="site-header">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="./" aria-label="Golden Echoes home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">Golden Echoes</span>
-        </a>
-        <div class="nav-links">
-          <a class="nav-link" href="./">Blog</a>
-          <a class="nav-link" href="status.html">Status</a>
+        <a class="brand" href="./" aria-label="Golden Echoes home">Golden Echoes</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <div id="nav-links" class="nav-links">
+          <a href="./">Blog</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <section class="blog-hero" aria-labelledby="blog-title">
-        <div class="blog-hero-inner">
-          <p class="eyebrow">Golden Echoes</p>
-          <h1 id="blog-title">GOLDEN ECHOES</h1>
-          <p id="blog-subtitle" class="lede">Life in the age of Applied Intelligence</p>
+      <section class="hero" aria-labelledby="site-title">
+        <div class="hero-inner">
+          <p class="kicker">Golden Echoes</p>
+          <h1 id="site-title">Life in the age of Applied Intelligence</h1>
+          <p class="hero-copy">Essays from the intersection of faith, technology, history, leadership, and culture.</p>
         </div>
       </section>
 
-      <section class="content-section blog-section" aria-live="polite">
-        <div id="blog-content"></div>
+      <section class="featured-section" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <p class="kicker">Featured</p>
+          <h2 id="featured-title">Selected Essays</h2>
+        </div>
+        <div id="featured-posts" class="featured-grid" aria-live="polite">
+          <p class="loading">Loading featured posts...</p>
+        </div>
+      </section>
+
+      <section class="posts-section" aria-labelledby="latest-title">
+        <div class="section-heading with-filters">
+          <div>
+            <p class="kicker">Blog</p>
+            <h2 id="latest-title">Latest Posts</h2>
+          </div>
+          <div id="home-filters" class="filter-list" aria-label="Filter posts"></div>
+        </div>
+        <div id="post-grid" class="post-grid" aria-live="polite">
+          <p class="loading">Loading posts...</p>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Hosted on GitHub Pages.</p>
+      <p>Golden Echoes</p>
+      <p>Life in the age of Applied Intelligence</p>
     </footer>
 
-    <script src="assets/blog.js"></script>
+    <script src="assets/site.js"></script>
   </body>
 </html>

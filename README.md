@@ -1,37 +1,28 @@
 # Golden Echoes Static Site
 
-A small static blog that can be hosted for free on GitHub Pages. The homepage shows imported WordPress posts from Golden Echoes.
+A small static blog that can be hosted for free on GitHub Pages. The homepage shows imported WordPress posts from Golden Echoes with client-side category filtering.
 
 ## Previous Blog Posts
 
-Imported WordPress posts are shown on the homepage. The archive reads from `data/wordpress-posts.json`, and individual posts open with URLs like:
+Imported WordPress posts are shown on the homepage. The site reads from `data/posts.json`, and individual posts open with URLs like:
 
 ```text
-/?post=leaders-walk-to-you
+post.html?slug=leaders-walk-to-you
 ```
 
-## Optional Status Updates
-
-The original status page is still available at `status.html`.
-
-To add a status update, edit `data/posts.json` and add a new object at the top or bottom of the list:
-
+Each post object should include:
 
 ```json
 {
-  "title": "Short update title",
-  "date": "2026-05-21T12:00:00-05:00",
-  "status": "operational",
-  "body": "Write the status update here."
+  "title": "Essay title",
+  "date": "2026-05-21T12:00:00",
+  "slug": "essay-title",
+  "excerpt": "Two or three sentence summary.",
+  "content": "<p>Post HTML or text.</p>",
+  "category": "AI & Technology",
+  "featured": false
 }
 ```
-
-Supported `status` values:
-
-- `operational`
-- `maintenance`
-- `degraded`
-- `outage`
 
 ## Preview Locally
 
@@ -49,10 +40,16 @@ http://localhost:8080
 
 ## Import WordPress Posts
 
-The importer pulls published posts from the public WordPress REST API and saves them to `data/wordpress-posts.json`.
+The importer pulls published posts from the public WordPress REST API and saves the raw archive to `data/wordpress-posts.json`.
 
 ```bash
 node scripts/import-wordpress.mjs
+```
+
+Then rebuild the site-ready post data:
+
+```bash
+node scripts/build-posts-data.mjs
 ```
 
 The current import source is:
