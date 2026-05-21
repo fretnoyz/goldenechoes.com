@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Status site launched",
+    "date": "2026-05-21T09:00:00-05:00",
+    "status": "operational",
+    "body": "This status site is live and ready for service updates, maintenance notes, and incident posts."
+  },
+  {
+    "title": "Planned maintenance example",
+    "date": "2026-05-20T18:30:00-05:00",
+    "status": "maintenance",
+    "body": "This is a sample maintenance post. Replace it with your own update or remove it before publishing."
+  }
+]

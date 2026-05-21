@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Current service status and recent updates.">
+    <title>Status</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="./" aria-label="Status home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">Golden Echoes</span>
+        </a>
+        <div class="nav-links">
+          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="#updates">Status Updates</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="status-band" aria-labelledby="status-title">
+        <div class="status-inner">
+          <div>
+            <p class="eyebrow">Current status</p>
+            <h1 id="status-title">Systems are operational</h1>
+            <p class="lede">Follow service status updates here, with the previous Golden Echoes posts preserved in the blog archive.</p>
+          </div>
+          <div class="status-summary" aria-live="polite">
+            <span id="summary-dot" class="summary-dot operational" aria-hidden="true"></span>
+            <div>
+              <p id="summary-label" class="summary-label">Operational</p>
+              <p id="summary-time" class="summary-time">Loading latest update...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="components-title">
+        <div class="section-header">
+          <h2 id="components-title">Components</h2>
+          <p>High-level availability at a glance.</p>
+        </div>
+        <div id="components" class="component-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="updates" class="content-section" aria-labelledby="updates-title">
+        <div class="section-header">
+          <h2 id="updates-title">Latest Updates</h2>
+          <p>Posts are loaded from <code>data/posts.json</code>.</p>
+        </div>
+        <div id="posts" class="timeline" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Hosted on GitHub Pages.</p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
