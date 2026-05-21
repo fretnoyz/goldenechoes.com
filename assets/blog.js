@@ -48,8 +48,8 @@ const postUrl = (post) => {
 };
 
 const renderArchive = (archive) => {
-  blogTitle.textContent = "Golden Echoes Blog";
-  blogSubtitle.textContent = `${archive.posts.length} previous posts imported from WordPress.`;
+  blogTitle.textContent = "GOLDEN ECHOES";
+  blogSubtitle.textContent = "Life in the age of Applied Intelligence";
 
   blogRoot.innerHTML = `
     <div class="archive-list">
