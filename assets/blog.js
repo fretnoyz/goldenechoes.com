@@ -1,6 +1,7 @@
 const blogRoot = document.querySelector("#blog-content");
 const blogTitle = document.querySelector("#blog-title");
 const blogSubtitle = document.querySelector("#blog-subtitle");
+const blogBase = document.body.dataset.blogBase || "blog.html";
 
 const escapeHtml = (value = "") => {
   return String(value).replace(/[&<>"']/g, (character) => {
@@ -43,7 +44,7 @@ const sanitizeWordPressHtml = (html = "") => {
 };
 
 const postUrl = (post) => {
-  return `blog.html?post=${encodeURIComponent(post.slug)}`;
+  return `${blogBase}?post=${encodeURIComponent(post.slug)}`;
 };
 
 const renderArchive = (archive) => {
@@ -75,7 +76,7 @@ const renderPost = (post) => {
 
   blogRoot.innerHTML = `
     <article class="blog-post">
-      <a class="back-link" href="blog.html">Back to all posts</a>
+      <a class="back-link" href="${blogBase}">Back to all posts</a>
       <div class="wordpress-content">
         ${sanitizeWordPressHtml(post.contentHtml)}
       </div>
@@ -104,7 +105,7 @@ const loadArchive = async () => {
       blogRoot.innerHTML = `
         <article class="post">
           <p>That post was not found.</p>
-          <p><a class="read-link" href="blog.html">View all posts</a></p>
+          <p><a class="read-link" href="${blogBase}">View all posts</a></p>
         </article>
       `;
       return;

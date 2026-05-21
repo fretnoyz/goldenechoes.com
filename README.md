@@ -1,10 +1,21 @@
-# Status Site
+# Golden Echoes Static Site
 
-A small static status website that can be hosted for free on GitHub Pages.
+A small static blog that can be hosted for free on GitHub Pages. The homepage shows imported WordPress posts from Golden Echoes.
 
-## Add A Post
+## Previous Blog Posts
 
-Edit `data/posts.json` and add a new object at the top or bottom of the list:
+Imported WordPress posts are shown on the homepage. The archive reads from `data/wordpress-posts.json`, and individual posts open with URLs like:
+
+```text
+/?post=leaders-walk-to-you
+```
+
+## Optional Status Updates
+
+The original status page is still available at `status.html`.
+
+To add a status update, edit `data/posts.json` and add a new object at the top or bottom of the list:
+
 
 ```json
 {
@@ -21,14 +32,6 @@ Supported `status` values:
 - `maintenance`
 - `degraded`
 - `outage`
-
-## Previous Blog Posts
-
-Imported WordPress posts are shown on `blog.html`. The archive reads from `data/wordpress-posts.json`, and individual posts open with URLs like:
-
-```text
-blog.html?post=leaders-walk-to-you
-```
 
 ## Preview Locally
 
@@ -65,7 +68,7 @@ https://goldenechoes.com/wp-json/wp/v2/posts
 
 ```bash
 git add .
-git commit -m "Create status site"
+git commit -m "Create static Golden Echoes site"
 git remote add origin git@github.com:YOUR-USER/YOUR-REPO.git
 git push -u origin main
 ```
