@@ -1,6 +1,6 @@
 const POSTS_URL = "data/posts.json";
 const SITE_TITLE = "Golden Echoes";
-const SITE_TAGLINE = "Life in the age of Applied Intelligence";
+const SITE_TAGLINE = "Old truths. New scars. Freely shared.";
 const AUTHOR = "Golden Echoes";
 const ALL_CATEGORIES = "All";
 
