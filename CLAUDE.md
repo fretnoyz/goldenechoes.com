@@ -44,8 +44,9 @@ When asked to write a post:
 
 1. Draft content following the editorial guide (see below)
 2. Add the post object to the top of `data/posts.json`
-3. Commit: `git commit -m "Add post: <title>"`
-4. Push to `origin main` — this triggers GitHub Pages deployment
+3. Run `node scripts/generate-rss.mjs` to regenerate `feed.xml`
+4. Commit both files: `git commit -m "Add post: <title>"`
+5. Push to `origin main` — this triggers GitHub Pages deployment
 
 ## Editorial Guide
 
@@ -71,11 +72,14 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Scripts (for WordPress import only)
+## Scripts
 
+```bash
+node scripts/generate-rss.mjs         # regenerate feed.xml from data/posts.json (run after every post)
+```
+
+WordPress import only (not needed for new posts):
 ```bash
 node scripts/import-wordpress.mjs     # fetch from WP REST API → data/wordpress-posts.json
 node scripts/build-posts-data.mjs     # transform → data/posts.json
 ```
-
-These are only needed if re-importing from the old WordPress site. New posts go directly into `data/posts.json`.
