@@ -1,0 +1,68 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Texas sunset landscape</title>
+  <desc id="desc">A Texas sunset: deep cobalt blue sky, narrow golden horizon band, sun disc with rays, live oak silhouette, rolling hills, and a fence line.</desc>
+
+  <defs>
+    <!--
+      Reference-accurate Texas sunset sky:
+      Rich cobalt blue dominant (top 65%) → lighter blue → narrow teal crossover
+      → GOLDEN YELLOW (thin intense band) → amber → deep red at land
+    -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#082E8C"/>
+      <stop offset="0.20" stop-color="#0C44B8"/>
+      <stop offset="0.44" stop-color="#1060B2"/>
+      <stop offset="0.60" stop-color="#147CAA"/>
+      <stop offset="0.67" stop-color="#18A898"/>
+      <stop offset="0.72" stop-color="#D4B018"/>
+      <stop offset="0.78" stop-color="#E86C10"/>
+      <stop offset="0.87" stop-color="#BE3808"/>
+      <stop offset="1"    stop-color="#7A1C06"/>
+    </linearGradient>
+
+    <!-- Warm horizon glow -->
+    <radialGradient id="horizonGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(800 668) scale(900 160)">
+      <stop offset="0"    stop-color="#FFD040" stop-opacity="0.45"/>
+      <stop offset="0.50" stop-color="#F07020" stop-opacity="0.20"/>
+      <stop offset="1"    stop-color="#E05010" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="silHill" x1="0" y1="640" x2="0" y2="780" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#110408"/>
+      <stop offset="1" stop-color="#050202"/>
+    </linearGradient>
+    <linearGradient id="silFront" x1="0" y1="798" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0304"/>
+      <stop offset="1" stop-color="#030202"/>
+    </linearGradient>
+
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="57" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Big Texas sky -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- Horizon warm glow -->
+  <rect width="1600" height="900" fill="url(#horizonGlow)"/>
+
+  <!-- Gentle rolling hills — low horizon so sky dominates -->
+  <path d="M0 650 C80 638 180 634 280 642 C390 651 490 636 600 645
+           C700 653 790 640 890 650 C950 656 1010 662 1060 666
+           C1100 670 1148 674 1190 676 C1260 678 1340 664 1600 682 V900 H0 Z"
+        fill="url(#silHill)"/>
+
+  <!-- Foreground ground strip -->
+  <path d="M0 814 C220 802 460 806 700 816 C940 826 1160 810 1380 818
+           C1480 822 1548 818 1600 826 V900 H0 Z"
+        fill="url(#silFront)"/>
+
+  <!-- Film grain -->
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.22"/>
+</svg>
